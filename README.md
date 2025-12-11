@@ -25,7 +25,7 @@ Run the FastAPI server:
 uvicorn main:app --reload
 ```
 
-![Server Startup](workflow_engine/media/Server Setup.png)
+![Server Startup](workflow_engine/media/Server_Setup.png)
 
 ### 2. Verify Core Engine
 Test the workflow logic directly (bypassing the API):
@@ -33,7 +33,7 @@ Test the workflow logic directly (bypassing the API):
 python verify_engine.py
 ```
 
-![Engine Verification](workflow_engine/media/Engine Verification.png)
+![Engine Verification](workflow_engine/media/Engine_Verification.png)
 
 ### 3. Verify APIs (Blocking & Streaming)
 Test the REST API and WebSocket streaming:
@@ -48,7 +48,7 @@ python verify_api.py
 python verify_websocket.py
 ```
 
-![WebSocket Streaming](workflow_engine/media/Verify WebSocket.png)
+![WebSocket Streaming](workflow_engine/media/Verify_WebSocket.png)
 
 
 ## API Reference
