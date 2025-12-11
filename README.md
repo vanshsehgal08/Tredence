@@ -43,6 +43,8 @@ Test the REST API and WebSocket streaming:
 python verify_api.py
 ```
 
+![Blocking API Verification](media/Verify_API.png)
+
 **Streaming API:**
 ```bash
 python verify_websocket.py
