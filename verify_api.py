@@ -53,8 +53,18 @@ def run_graph(graph_id):
         print(f"Run completed in {end_time - start_time:.2f}s")
         print(f"Status: {result.get('status')}")
         print(f"Final State: {result.get('final_state')}")
+        return result.get("run_id")
     else:
         print(f"Error running graph: {response.text}")
+        return None
+
+def get_run_state(run_id):
+    print(f"Getting state for run {run_id}...")
+    response = requests.get(f"{BASE_URL}/graph/state/{run_id}")
+    if response.status_code == 200:
+        print(f"State Retrieved: {response.json()}")
+    else:
+        print(f"Error getting state: {response.text}")
 
 if __name__ == "__main__":
     print(f"Testing API at {BASE_URL}")
@@ -67,4 +77,6 @@ if __name__ == "__main__":
 
     graph_id = create_graph()
     if graph_id:
-        run_graph(graph_id)
+        run_id = run_graph(graph_id)
+        if run_id:
+             get_run_state(run_id)

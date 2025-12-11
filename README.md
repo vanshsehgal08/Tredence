@@ -66,3 +66,15 @@ python verify_websocket.py
 ### Stream Graph (WebSocket)
 - **WS** `/graph/stream`
 - Send: `{"graph_id": "...", "initial_state": {...}}`
+
+### Get Run State
+- **GET** `/graph/state/{run_id}`
+- Returns: `{"run_id": "...", "status": "...", "final_state": {...}, "history": [...]}`
+
+## Future Improvements
+With more time, I would add:
+1.  **Persistent Storage**: Replace in-memory storage with SQLite/PostgreSQL for durability.
+2.  **Concurrency Control**: Better locking for shared state in high-concurrency scenarios.
+3.  **Dynamic Graph Editing**: APIs to update existing graphs (add/remove nodes).
+4.  **UI Visualization**: A frontend to visualize the graph structure and execution flow.
+5.  **Error Handling**: More granular error recovery and retry policies for failed nodes.
